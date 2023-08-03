@@ -1,6 +1,7 @@
 package skypro.spring.calculatorJUnit.services;
 
 import org.springframework.stereotype.Service;
+import skypro.spring.calculatorJUnit.exceptions.MyIllegalArgumentException;
 
 @Service
 public class CalculatorServiceImpl implements CalculatorService {
@@ -22,7 +23,7 @@ public class CalculatorServiceImpl implements CalculatorService {
     @Override
     public Double divide(Double num1, Double num2) throws IllegalAccessException {
         if (num2 == 0.0) {
-            throw new IllegalAccessException("Деление на 0 невозможно");
+            throw new MyIllegalArgumentException("Деление на 0 невозможно");
         } else {
             return num1 / num2;
         }

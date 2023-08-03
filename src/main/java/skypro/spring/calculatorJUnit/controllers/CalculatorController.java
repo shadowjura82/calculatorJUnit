@@ -1,11 +1,13 @@
 package skypro.spring.calculatorJUnit.controllers;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import skypro.spring.calculatorJUnit.services.CalculatorServiceImpl;
 
 @RestController
+@RequestMapping(path = "/calculator")
 public class CalculatorController {
     private final CalculatorServiceImpl calculatorService;
 
@@ -37,4 +39,5 @@ public class CalculatorController {
     public String divide(Double num1, Double num2) throws IllegalAccessException {
         return num1 + " / " + num2 + " = " + calculatorService.divide(num1, num2);
     }
+
 }
